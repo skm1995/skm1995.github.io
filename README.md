@@ -6,5 +6,5 @@ only its own stylesheet.
 
 Projects:
 
-- [Merchant Panel](https://github.com/skm1995/vanilla-php-playground): an e-commerce backend
+- [Merchant Panel](https://github.com/skm1995/merchant-panel): an e-commerce backend
   with a merchant panel, built without a framework.
