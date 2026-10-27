@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Szymon Kozłowski · Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Merchant Panel: a portfolio project with a PHP 8.5 JSON API, a React merchant panel, asynchronous messaging, and continuous deployment."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="intro">
+      <p class="eyebrow">Full-Stack Developer</p>
+      <h1>Szymon Kozłowski</h1>
+      <p>Full-stack developer with 7+ years of experience in PHP and Vue.js.</p>
+      <nav class="links" aria-label="Profiles">
+        <a href="https://github.com/skm1995">GitHub</a>
+        <a href="https://www.linkedin.com/in/szymon-koz%C5%82owski-8031a3169">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project" aria-labelledby="project-title">
+        <p class="eyebrow">Featured project</p>
+        <h2 id="project-title">Merchant Panel</h2>
+        <p class="lead">
+          An e-commerce backend with a merchant panel, built without a framework to show the
+          fundamentals: a PHP 8.5 JSON API, a React panel, asynchronous messaging, and a CI pipeline
+          that deploys every commit that passes its tests.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="https://demo.92-5-154-24.sslip.io">Open the live demo</a>
+          <a class="button" href="https://github.com/skm1995/vanilla-php-playground">Source code</a>
+          <a
+            class="button"
+            href="https://github.com/skm1995/vanilla-php-playground/tree/master/docs"
+            >Documentation</a
+          >
+        </div>
+        <dl class="demo-account" aria-label="Demo account">
+          <div>
+            <dt>Demo email</dt>
+            <dd><code>demo@example.com</code></dd>
+          </div>
+          <div>
+            <dt>Demo password</dt>
+            <dd><code>demo-merchant-2026</code></dd>
+          </div>
+        </dl>
+        <p class="note">The demo account is shared with other visitors, so its data may change.</p>
+      </section>
+
+      <section aria-labelledby="features-title">
+        <h2 id="features-title">What it does</h2>
+        <ul class="cards">
+          <li>
+            <h3>Checkout under concurrency</h3>
+            <p>
+              Carts and checkout reserve stock with row locks, accept retries through idempotency
+              keys, and release unpaid reservations when they expire.
+            </p>
+          </li>
+          <li>
+            <h3>Payments and webhooks</h3>
+            <p>
+              Simulated payment providers report results through signed webhooks that are applied
+              exactly once, even when delivered concurrently.
+            </p>
+          </li>
+          <li>
+            <h3>Secure sign-in</h3>
+            <p>
+              Session cookies with CSRF protection, email confirmation sent through a transactional
+              outbox, rate limits, and panel access only for merchants.
+            </p>
+          </li>
+          <li>
+            <h3>Merchant panel</h3>
+            <p>
+              Orders, product editing with optimistic locking, and revenue reports, in a React app
+              typed from the OpenAPI contract.
+            </p>
+          </li>
+          <li>
+            <h3>Legacy replaced safely</h3>
+            <p>
+              A legacy page was characterized with golden-master tests and replaced with the
+              strangler fig pattern, keeping old links working.
+            </p>
+          </li>
+          <li>
+            <h3>Traceable in production</h3>
+            <p>
+              JSON logs carry a request id from the HTTP request through the message queue to the
+              worker that sent the email.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="architecture-title">
+        <h2 id="architecture-title">How it is built</h2>
+        <ol class="diagram" aria-label="Request path">
+          <li><strong>Browser</strong><span>React merchant panel</span></li>
+          <li><strong>Caddy</strong><span>HTTPS, security headers</span></li>
+          <li><strong>PHP-FPM</strong><span>JSON API, middleware, CQRS</span></li>
+          <li><strong>MySQL &amp; Redis</strong><span>orders and outbox; cache, sessions, limits</span></li>
+        </ol>
+        <ol class="diagram" aria-label="Background work">
+          <li><strong>Outbox relay</strong><span>publishes stored messages</span></li>
+          <li><strong>RabbitMQ</strong><span>emails, expiries, cache</span></li>
+          <li><strong>Worker</strong><span>sends emails, expires orders</span></li>
+          <li><strong>Mailpit</strong><span>catches the demo&apos;s emails</span></li>
+        </ol>
+        <ul class="practices">
+          <li>Test-driven: unit, functional, end-to-end, and load tests</li>
+          <li>PHPStan level 8 and architecture rules enforced by Deptrac</li>
+          <li>Contract-first API documented in OpenAPI</li>
+          <li>Every green commit deployed from GitHub Actions to Oracle Cloud</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="stack-title">
+        <h2 id="stack-title">Built with</h2>
+        <ul class="tags">
+          <li>PHP 8.5</li>
+          <li>Symfony Messenger</li>
+          <li>MySQL 8.4</li>
+          <li>RabbitMQ</li>
+          <li>Redis</li>
+          <li>React 19</li>
+          <li>TypeScript</li>
+          <li>Vite</li>
+          <li>Caddy</li>
+          <li>Docker Compose</li>
+          <li>GitHub Actions</li>
+          <li>OpenAPI</li>
+          <li>PHPUnit</li>
+          <li>Vitest</li>
+          <li>Playwright</li>
+          <li>k6</li>
+          <li>Elasticsearch &amp; Kibana</li>
+        </ul>
+        <h3 class="subheading">Tooling</h3>
+        <ul class="tags">
+          <li>PhpStorm</li>
+          <li>Docker</li>
+          <li>GitHub Actions</li>
+          <li>Claude Code</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Szymon Kozłowski</p>
+    </footer>
+  </body>
+</html>
